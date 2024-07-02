@@ -1,9 +1,12 @@
-const express =require ("express");
-const app = express ();
-const productosRouter= require("./routes/productos.router.js")
+const express = require("express");
+const app = express();
 
 
 const path = require("path");
- app.use (express.static(path.join(_dirname, "public")));
+app.use(express.static(path.join(_dirname, "public")));
 
- app.use("/productos",productosRouter);
+//  const productosRouter= require("./routes/productos.router.js")
+
+app.use("/productos", require("./routes/productos.router.js"));
+
+app.use("/productos", productosRouter);
